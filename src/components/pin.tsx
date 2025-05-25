@@ -1,21 +1,17 @@
 import { Interview } from "@/types";
-import { useAuth } from "@clerk/clerk-react";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
-  CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 
 import { Badge } from "./ui/badge";
 import { cn } from "@/lib/utils";
 import { TooltipButton } from "./tooltip-button";
-import { Eye, Newspaper, Pencil, Sparkles } from "lucide-react";
+import { Eye, Newspaper, Sparkles } from "lucide-react";
 
 interface InterviewPinProps {
   interview: Interview;
@@ -27,8 +23,6 @@ export const InterviewPin = ({
   onMockPage = false,
 }: InterviewPinProps) => {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
-  const { userId } = useAuth();
 
   return (
     <Card
